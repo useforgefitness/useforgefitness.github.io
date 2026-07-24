@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["P3V9868866.com.ciaraaitken.forgefitness"],
+        "components": [
+          { "/": "/add*" }
+        ]
+      }
+    ]
+  }
+}
