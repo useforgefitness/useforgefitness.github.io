@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join me on Forge Fitness</title>
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; background: #f5f6f8;
+         margin: 0; display: flex; min-height: 100vh; align-items: center; justify-content: center; }
+  .card { background: #fff; border-radius: 20px; padding: 36px 28px; max-width: 340px;
+          text-align: center; box-shadow: 0 8px 30px rgba(0,0,0,0.08); margin: 20px; }
+  h1 { font-size: 24px; margin: 0 0 8px; }
+  p { color: #555; line-height: 1.5; }
+  .code { font-size: 34px; font-weight: 800; letter-spacing: 6px; color: #0a6cff;
+          background: #eef4ff; border-radius: 12px; padding: 14px 10px; margin: 18px 0; }
+  ol { text-align: left; color: #555; line-height: 1.7; padding-left: 22px; }
+  .small { font-size: 13px; color: #999; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Join me on Forge Fitness</h1>
+  <p>Your friend wants to compete with you. Their friend code:</p>
+  <div class="code" id="code">......</div>
+  <ol>
+    <li>Open Forge Fitness (ask your friend for a TestFlight invite if you don't have it yet)</li>
+    <li>Go to the <strong>Friends</strong> tab</li>
+    <li>Enter the code above. You'll be connected both ways</li>
+  </ol>
+  <p class="small">If the app is installed, tapping the link you received opens it directly.</p>
+</div>
+<script>
+  var params = new URLSearchParams(window.location.search);
+  var code = (params.get("c") || "").toUpperCase().replace(/[^2-9A-Z]/g, "").slice(0, 6);
+  if (code.length === 6) { document.getElementById("code").textContent = code; }
+  else { document.getElementById("code").textContent = "ASK THEM"; }
+</script>
+</body>
+</html>
